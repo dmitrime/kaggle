@@ -61,12 +61,11 @@ if __name__ == '__main__':
 
             optimal.append(1.0 if cur == opt else 0.0)
 
-        # 0.5 only if all 15 paths do not exist
         if notfound == len(graphs):
-            series.append([0.5]*len(graphs))
             noBoth += 1
-        else:
-            series.append(optimal)
+            #print pt
+            
+        series.append(optimal)
 
     print "mapping contains %d nodes\n" % (nodes+1)
     print "150000 paths in 15 graphs:" 
@@ -85,7 +84,7 @@ if __name__ == '__main__':
     for i in range(5):
         submission.extend(predictions)
 
-    g = open("submission-mode05-Oct29.csv", 'w')
+    g = open("submission2-mode-Nov20.csv", 'w')
     g.write("%s" % "\n".join(submission))
     g.close()
 
